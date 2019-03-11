@@ -6,11 +6,9 @@ request.get('https://sytantris.github.io/http-examples/future.jpg')
     throw err; 
   })
   .on('response', function (response) {                           
-    console.log('Response -------- ', response)
+    console.log('Downloading image...');
     console.log('Response Messages ------------ ', response.statusMessage);
     console.log('Status Type ---------- ', response.headers['content-type'])
     console.log('Download complete.');
   })
   .pipe(fs.createWriteStream('./future.jpg'));  
-
-  console.log('Downloading image...');
